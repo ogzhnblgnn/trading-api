@@ -16,13 +16,20 @@ public class User {
     @Column(name = "username")
     private String username;
 
-    @Column(name = "password")
-    private String password;
-
     @Column(name = "balance")
     private Double balance;
 
     @OneToOne(mappedBy = "user")
     private Portfolio portfolio;
+
+    public User(String username, Double balance) {
+        this.username = username;
+        this.balance = balance;
+
+    }
+
+    public User() {
+
+    }
 }
 

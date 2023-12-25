@@ -21,7 +21,7 @@ public class TransactionController {
     @PostMapping("/buy")
     public ResponseEntity<String> buyTransaction(@RequestBody BuyRequest buyRequest) {
         try {
-            tradeService.buyTransaction(buyRequest.getUserId(), buyRequest.getShareId(), buyRequest.getQuantity());
+            tradeService.buyTransaction(buyRequest.getUserId(), buyRequest.getShareId(), buyRequest.getQuantity(), buyRequest.getPrice());
             return ResponseEntity.ok("Alım işlemi başarıyla gerçekleştirildi.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hata: " + e.getMessage());
@@ -31,8 +31,8 @@ public class TransactionController {
     @PostMapping("/sell")
     public ResponseEntity<String> sellTransaction(@RequestBody BuyRequest buyRequest) {
         try {
-            tradeService.sellTransaction(buyRequest.getUserId(), buyRequest.getShareId(), buyRequest.getQuantity());
-            return ResponseEntity.ok("Alım işlemi başarıyla gerçekleştirildi.");
+            tradeService.sellTransaction(buyRequest.getUserId(), buyRequest.getShareId(), buyRequest.getQuantity(), buyRequest.getPrice());
+            return ResponseEntity.ok("Satış işlemi başarıyla gerçekleştirildi.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hata: " + e.getMessage());
         }
