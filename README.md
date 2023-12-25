@@ -7,7 +7,7 @@ Kurulum için öncelikle Java, Maven kurulumlarının tamamlanması gerekmektedi
 src -> main -> java -> resources paketinde <br />
 -application.properties dosyasında;<br />
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/trading   -----> bu adreste trading adında bir db olmaz ise uygulama doğru çalışmayacaktır !!<br />
+spring.datasource.url=jdbc:postgresql://localhost:5432/trading   -----> bu adreste trading adında bir db olmaz ise uygulama doğru çalışmayacaktır !! Tablolarınız ORM tarafıdndan db'ye insert edilecektir.<br />
 spring.datasource.username=postgres -----> postgresql_username<br />
 spring.datasource.password=1234 ------> postgresql_password
 <br />
